@@ -1,0 +1,16 @@
+#!/bin/sh
+
+BROWSER='firefox'
+
+LIST=(
+  "youtube - https://youtube.com"
+  "whatsapp - https://web.whatsapp.com"
+  "amazon - https://amazon.de"
+  "github - https://github.com"
+  "google - https://google.com"
+  "email - https://email.ionos.de"
+  "fieldguide - http://fieldguide.automattic.com"
+  "matticspace - https://matticspace.a8c.com"
+)
+
+printf "%s\n" "${LIST[@]}" | rofi -dmenu | awk '{ print $3 }' | xargs firefox
